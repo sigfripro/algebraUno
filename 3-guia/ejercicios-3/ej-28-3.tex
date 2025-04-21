@@ -1,3 +1,4 @@
+% chktex-file 11 % es para evitar un warning de chktex
 \begin{enunciado}{\ejercicio}
   En este ejercicio no hace falta usar inducción.
   \begin{enumerate}[label=\alph*)]
@@ -8,7 +9,13 @@
   \end{enumerate}
 \end{enunciado}
 
+<<<<<<< HEAD
 \begin{enumerate}[label=\alph*)]
+=======
+Binomio de Newton: $(x + y)^n = \sumatoria{k=0}{n} \binom{n}{k} x^{n-k} y^k$
+
+\begin{enumerate}[label=\roman*)]
+>>>>>>> 4d34097 (agrego mas ejercicios de la guia 3)
   \item
         Voy a mostrarlo usando un argumento combinatorio. Básicamente voy a mostrar que con las dos expresiones estamos contando lo mismo.
         Imaginemos que tenemos un conjunto de $\rosa{n}$ cantidad de mujeres y otro de $\blue{n}$ cantidad de hombres.
@@ -104,6 +111,7 @@
         $$
 
   \item
+<<<<<<< HEAD
         ¿Vale usar \textit{crudamente} la fórmula del binomio de Newton acá?
 
         \bigskip
@@ -202,6 +210,45 @@
 
         \hacer
 
+=======
+        El enunciado nos dice que:
+        \[
+        \sumatoria{k = 0}{n} (-1)^k \binom{n}{k} = 0
+        \]
+        Que se puede leer como:
+        \[
+        \binom{n}{0} -\binom{n}{1} + \binom{n}{2} - \cdots \underbrace{-\slash+}_{\llamada1} \binom{n}{n} = 0 \\
+        \]
+        $\llamada1$: pongo mas o menos porq depende si la cantidad de terminos son pares o impares 
+        el ultimo se suma o resta el ultimo termino. \\
+        Vemos que los terminos con k positiva se suman y los terminos con k negativa se restan... \\
+
+        Vamos a usar el binomio de newton:
+        \[
+        (x + y)^n = \sumatoria{k=0}{n} \binom{n}{k} x^{n-k} y^{k}
+        \]
+        Fijense que si pongo $x = 1 \ytext y = -1$, cada vez que k sea impar, el numero combinatorio va a ser negativo, o sea
+        voy a tener:
+        \[
+        (1 + (-1))^n = \binom{n}{0} -\binom{n}{1} + \binom{n}{2} - \cdots -\slash+ \binom{n}{n}
+        \]
+        \underline{El termino de la izquierda es $0$ asi que confirmamos que la expresion original es igual a $0$}
+
+        \vspace{15pt}
+        Otra manera de verlo que en realidad es la misma pero con menos vuelta, usando la identidad
+        \[
+        (1 + x)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
+        \]
+        si ahora llamo $x = - 1$, me queda:
+        \[
+        (1 + (-1))^n = \sum_{k=0}^{n} \binom{n}{k} (-1)^k
+        \]
+        Rescribiendo esto:
+        \[
+        \sum_{k=0}^{n} (-1)^k \binom{n}{k} = 0
+        \]
+        
+>>>>>>> 4d34097 (agrego mas ejercicios de la guia 3)
   \item
         \hacer
   \item
@@ -209,6 +256,11 @@
 \end{enumerate}
 
 \begin{aportes}
+<<<<<<< HEAD
   \item \aporte{https://github.com/sigfripro}{Sigfri \github}
   \item \aporte{\dirRepo}{naD GarRaz \github}
 \end{aportes}
+=======
+      \item \aporte{https://github.com/sigfripro}{sigfripro \github}
+\end{aportes}
+>>>>>>> 4d34097 (agrego mas ejercicios de la guia 3)
