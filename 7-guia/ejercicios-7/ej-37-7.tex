@@ -8,4 +8,19 @@
     \end{multicols}
   \end{enumerate}
 \end{enunciado}
-\hacer
+
+Llamemos a el polinomio del enunciado $p$, como es de grado 3, tiene las 3 raices que nos dice
+el enunciado que son $a$, $b$, y $c$, luego como el coeficiente principal de $p$ es 2, tenemos que 
+$p = 2(x-a)(x-b)(x-c)$, expandiendo el producto llegamos a $p = 2(x^3-(a+b+c)x^2 + (ab+ac+bc)x + (-abc))$. 
+Vemos que lo que nos pide el enunciado son justo los coeficientes de $x^2$, $x$ y el independiente, respectivamente. A
+todos ellos que los obtenemos directo del polinomio $p$ hay que dividirlos por el coeficiente principal $2$ ya que las raices no dependen
+de este mismo, luego:
+\begin{align*}
+  a + b + c &= \frac{3}{2}\\
+  ab + ac + bc &= 2\\
+  abc &= -\frac{1}{2}\\
+\end{align*}
+
+\begin{aportes}
+  \item \aporte{https://github.com/sigfripro}{sigfripro \github}
+\end{aportes}
