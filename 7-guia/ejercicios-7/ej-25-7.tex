@@ -1,1 +1,28 @@
-\ejercicio\hacer
+\begin{enunciado}{\ejercicio}
+    Sea $(f_n)_{n\in\mathbb{N}}$ la sucesión de polinomios en $\mathbb{Q}[X]$ definida por \\
+    \[f_1 = X^3 + 2X \text{  y  } f_{n+1} = Xf_n^2+X^2f'_n,\, \forall n \in \mathbb{N}\]
+    Probar que para todo $n \in \mathbb{N}$ vale que:
+    \begin{enumerate}[label=\roman*)]
+        \item $gr(f_n) = 2^{n+1} - 1$
+        \item $0$ es raiz de multiplicidad $n$ de $f_n$
+    \end{enumerate}
+\end{enunciado}
+
+\begin{enumerate}[label=\roman*)]
+    \item Vamos a usar inducción, primero veamos el caso base $n = 1$, por enunciado vemos que es de grado 3
+    y $2^2 - 1 = 3$ por lo que el caso base es verdadero. Luego queremos ver si se cumple que $P(n) \entonces P(n+1)$ tomando
+    a $P(n)$ como verdadero. \\
+    Por enunciado $f_{n+1} = Xf_n^2+X^2f'_n$, el grado de una suma de polinomios es el maximo grado entre los sumandos, luego
+    $gr(f_{n+1}) = max(gr(Xf_n^2), gr(X^2f'_n))$, por hipotesis inductiva el grado de $f_n$ es $2^{n+1} -1$, y el grado de
+    $f'_n$ es uno menos por lo que es $2^{n+1} -2$, manipulando y usando las propiedades de los grados de polinomios llegamos a que 
+    $gr(f_{n+1}) = max(1 + 2(2^{n+1} - 1),2 + 2^{n+1} - 2)$, vemos que de estos valores el maximo es el de la izquierda, 
+    que manipulandolo queda $2^{n+2} -1$, probando el paso inductivo.
+
+    \item De vuelta usamos inducción, el caso base vemos que es verdadero puesto que $0$ es raiz de multiplicidad $1$,
+    Ahora queremos ver que si $f_n$ tiene multiplicidad $n$ en 0, $f_{n+1}$ tiene multiplicidad $n+1$ en cero,
+    vemos nuestra expresion $f_{n+1} = Xf_n^2+X^2f'_n$, podemos factorizar una $X$, quedando $f_{n+1} = X(f_n^2+Xf'_n)$, ahora bastaria
+    con ver que lo de adentro del parentesis tenga multiplicidad $n$ en $0$ (ya que factorizamos una $X$), para que pase eso, ambos sumandos 
+    deben tener al menos multiplicidad $n$ en $0$, vemos que el primer sumando cumple pues es $f_n^2$, ahora el otro sumando es la derivada de $f_n$, por 
+    lo que tiene en todas las raices que compartan uno menos de multiplicidad, como $f_n$ tiene multiplicadad $n$, entonces la derivada tiene
+    multiplicidad $n-1$, pero multiplicado con la $X$ que lo acompaña, tiene multiplicidad $n$, que es lo que queriamos ver, luego queda probado el paso inductivo
+\end{enumerate}
